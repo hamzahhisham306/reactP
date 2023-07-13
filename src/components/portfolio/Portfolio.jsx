@@ -109,8 +109,8 @@ const Portfolio = () => {
       description:
         'Burger website',
       technologies: ' HTML  | CSS | JavaScript',
-      link: 'https://thelearnbook.com',
-      github: 'https://thelearnbook.com',
+      link: 'http://localhost:3000',
+      github: 'http://localhost:3000',
     },
   ];
 
