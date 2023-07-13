@@ -109,7 +109,7 @@ const Portfolio = () => {
       description:
         'Burger website',
       technologies: ' HTML  | CSS | JavaScript',
-      link: 'https://hamzahhisham306.github.io/Bruger/',
+      link: 'https://thelearnbook.com',
       github: 'https://thelearnbook.com',
     },
   ];
