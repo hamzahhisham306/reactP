@@ -8,11 +8,44 @@ import IMG6 from '../../assets/app7.png';
 import IMG7 from '../../assets/app8.png';
 import IMG9 from '../../assets/app9.png';
 import IMG10 from '../../assets/app10.png';
-
+import IMG11 from '../../assets/Screenshot 2023-12-23 141300.png'
+import IMG12 from '../../assets/Screenshot 2023-12-23 141711.png'
+import IMG13 from '../../assets/Screenshot 2023-12-23 142957.png'
 import './portfolio.css';
 
 const Portfolio = () => {
-  const soloProjects = [
+const soloProjects = [
+    {
+      id: 9,
+      title: 'Arab Georgia',
+      img: IMG11,
+      description:
+        ' Georgia is a community project that helps Arabs living in or moving to Georgia. The project provides a forum for Arab Georgians to connect with each other and share resources, experiences, and advice.The project also provides employment opportunities for Arabs residing in Georgia....',
+      technologies: 'React | Redux | CSS | PHP | Laravel | SQL',
+      link: 'https://arab-georgia.com/en',
+      github: 'https://arab-georgia.com/en',
+    },
+
+    {
+      id: 9,
+      title: 'All Arab USA',
+      img: IMG12,
+      description:
+        'Arab USA represents a nationwide initiative focused on uniting Arab communities across all 50 states. Catering to Arab residents anywhere in the U.S., and those considering relocating, this project is committed to fostering connections and reinforcing bonds. Leveraging social media platforms, organizing events......',
+      technologies: 'React | Redux | CSS | PHP | Laravel | SQL',
+      link: 'https://allarabusa.com/en',
+      github: 'https://allarabusa.com/en',
+    },
+    {
+      id: 9,
+      title: 'Georgia Muslim',
+      img: IMG13,
+      description:
+      ' Georgia is a community project that helps Arabs living in or moving to Georgia. The project provides a forum for Arab Georgians to connect with each other and share resources, experiences, and advice.The project also provides employment opportunities for Arabs residing in Georgia....',
+      technologies: 'React | Redux | CSS | PHP | Laravel | SQL',
+      link: 'https://deluxe-daifuku-08e26e.netlify.app/',
+      github: 'https://deluxe-daifuku-08e26e.netlify.app/',
+    },
     {
       id: 8,
       title: 'Design Studio',
