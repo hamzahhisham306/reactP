@@ -56,8 +56,8 @@ const Portfolio = () => {
       description:
       'Ecommerce is the buying/selling of goods or services on the Internet',
       technologies: 'React | Redux | CSS | JSX',
-      link: 'https://allarabusa.com/en',
-      github: 'https://allarabusa.com/en',
+      link: 'https://illustrious-sopapillas-c96ed0.netlify.app',
+      github: 'https://illustrious-sopapillas-c96ed0.netlify.app',
     },
     {
       id: 9,
