@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-- [Live Demo](https://meri-mg-portfolio.netlify.app/)
+- [Live Demo](https://hamzahhisham.netlify.app/)
 
 
 # Getting Started
