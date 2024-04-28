@@ -11,10 +11,22 @@ import IMG10 from '../../assets/app10.png';
 import IMG11 from '../../assets/Screenshot 2023-12-23 141300.png'
 import IMG12 from '../../assets/Screenshot 2023-12-23 141711.png'
 import IMG13 from '../../assets/Screenshot 2023-12-23 142957.png'
+import Learn from '../../assets/learn.png'
+import Ecommerce from '../../assets/ecommer.png';
 import './portfolio.css';
 
 const Portfolio = () => {
-const soloProjects = [
+  const soloProjects = [
+    {
+      id: 9,
+      title: 'The Learn Book Gate',
+      img: Learn,
+      description:
+        'The Scientific Book Portal constitutes a platform for databases that includes various sources of knowledge under its umbrella, as it includes thousands of works of scientific books, theses, Arab journals, and international conferences',
+      technologies: 'React | Redux | CSS | NodeJs | ExpressJs | MongoDB | AWS',
+      link: 'https://thelearnbook.com',
+      github: 'https://thelearnbook.com',
+    },
     {
       id: 9,
       title: 'Arab Georgia',
@@ -33,6 +45,17 @@ const soloProjects = [
       description:
         'Arab USA represents a nationwide initiative focused on uniting Arab communities across all 50 states. Catering to Arab residents anywhere in the U.S., and those considering relocating, this project is committed to fostering connections and reinforcing bonds. Leveraging social media platforms, organizing events......',
       technologies: 'React | Redux | CSS | PHP | Laravel | SQL',
+      link: 'https://allarabusa.com/en',
+      github: 'https://allarabusa.com/en',
+    },
+ 
+    {
+      id: 9432,
+      title: 'E-commerce',
+      img: Ecommerce,
+      description:
+      'Ecommerce is the buying/selling of goods or services on the Internet',
+      technologies: 'React | Redux | CSS | JSX',
       link: 'https://allarabusa.com/en',
       github: 'https://allarabusa.com/en',
     },
