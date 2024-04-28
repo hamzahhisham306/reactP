@@ -32,6 +32,23 @@ const Intro = () => {
 knowledge to maximize efficiency while developing creative, customer focused solutions.
 Fluent in Arabic and have a professional level in English.</p>
           <a href="#contact" className="btn btn-primary">Let's Talk</a>
+           <div style={{marginTop:"40px"}}>
+          <h2>Experience</h2>
+        <ul>
+          <li style={{marginTop:"14px"}}>
+            
+          1. As a Full Stack Developer at thelearnbook.com, I resolved bugs and added features to
+enhance functionality. I improved user experience by implementing new features and
+addressing performance issues. My contributions as a problem solver and collaborator
+improved the website's usability.
+          </li>
+        </ul>
+    <li style={{marginTop:"14px"}}>
+    2. Frontend Developer at glyphsmarketing creating a user interface website or application it
+Involves designing and implementing the visual elements , layouts and features that users
+see and interact with
+    </li>
+          </div>
         </div>
       </div>
     </section>
