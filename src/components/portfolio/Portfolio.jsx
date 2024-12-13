@@ -48,23 +48,33 @@ const Portfolio = () => {
       link: 'https://allarabusa.com/en',
       github: 'https://allarabusa.com/en',
     },
- 
+
     {
       id: 9432,
       title: 'E-commerce',
       img: Ecommerce,
       description:
-      'Ecommerce is the buying/selling of goods or services on the Internet',
+        'Ecommerce is the buying/selling of goods or services on the Internet',
       technologies: 'React | Redux | CSS | JSX',
       link: 'https://allarabusa.com/en',
       github: 'https://allarabusa.com/en',
     },
+    // {
+    //   id: 9324,
+    //   title: 'chat application',
+    //   img: Ecommerce,
+    //   description:
+    //     'Chat application to communtion between people',
+    //   technologies: 'React | Redux | CSS | JSX | NodeJS| Express | MongoDB| Web-Socket',
+    //   link: 'https://gleeful-axolotl-730d5d.netlify.app/',
+    //   github: 'https://allarabusa.com/en',
+    // },
     {
       id: 9,
       title: 'Georgia Muslim',
       img: IMG13,
       description:
-      ' Georgia is a community project that helps Arabs living in or moving to Georgia. The project provides a forum for Arab Georgians to connect with each other and share resources, experiences, and advice.The project also provides employment opportunities for Arabs residing in Georgia....',
+        ' Georgia is a community project that helps Arabs living in or moving to Georgia. The project provides a forum for Arab Georgians to connect with each other and share resources, experiences, and advice.The project also provides employment opportunities for Arabs residing in Georgia....',
       technologies: 'React | Redux | CSS | PHP | Laravel | SQL',
       link: 'https://deluxe-daifuku-08e26e.netlify.app/',
       github: 'https://deluxe-daifuku-08e26e.netlify.app/',
