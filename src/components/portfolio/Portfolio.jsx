@@ -6,7 +6,7 @@ import IMG4 from '../../assets/app4.png';
 import IMG5 from '../../assets/app6.png';
 import IMG6 from '../../assets/app7.png';
 import IMG7 from '../../assets/app8.png';
-import IMG9 from '../../assets/app9.png';
+import IMG9 from '../../assets/Screenshot 2024-12-26 122810.png';
 import IMG10 from '../../assets/app10.png';
 import IMG11 from '../../assets/Screenshot 2023-12-23 141300.png'
 import IMG12 from '../../assets/Screenshot 2023-12-23 141711.png'
@@ -49,7 +49,18 @@ const Portfolio = () => {
       link: 'https://allarabusa.com/en',
       github: 'https://allarabusa.com/en',
     },
-     {
+
+    {
+      id: 9432,
+      title: 'E-commerce',
+      img: Ecommerce,
+      description:
+        'Ecommerce is the buying/selling of goods or services on the Internet',
+      technologies: 'React | Redux | CSS | JSX',
+      link: 'https://allarabusa.com/en',
+      github: 'https://allarabusa.com/en',
+    },
+    {
       id: 9324,
       title: 'Movie search',
       img: IMG14,
@@ -60,21 +71,21 @@ const Portfolio = () => {
       github: 'https://github.com/hamzahhisham306/Angular_movie',
     },
     {
-      id: 9432,
-      title: 'E-commerce',
-      img: Ecommerce,
+      id: 9,
+      title: 'JOurney',
+      img: IMG9,
       description:
-      'Ecommerce is the buying/selling of goods or services on the Internet',
-      technologies: 'React | Redux | CSS | JSX',
-      link: 'https://illustrious-sopapillas-c96ed0.netlify.app',
-      github: 'https://illustrious-sopapillas-c96ed0.netlify.app',
+        'we have built a website for schools that provides Organizing fun, useful and safe school trips takes a lot of time and effort and requires special study for the trip ',
+      technologies: 'React | Redux | CSS | Node.js | Express.js | PostgreSQL',
+      link: 'https://dulcet-tiramisu-3c7b3d.netlify.app/',
+      github: 'https://github.com/orgs/School-trip-app/repositories',
     },
     {
       id: 9,
       title: 'Georgia Muslim',
       img: IMG13,
       description:
-      ' Georgia is a community project that helps Arabs living in or moving to Georgia. The project provides a forum for Arab Georgians to connect with each other and share resources, experiences, and advice.The project also provides employment opportunities for Arabs residing in Georgia....',
+        ' Georgia is a community project that helps Arabs living in or moving to Georgia. The project provides a forum for Arab Georgians to connect with each other and share resources, experiences, and advice.The project also provides employment opportunities for Arabs residing in Georgia....',
       technologies: 'React | Redux | CSS | PHP | Laravel | SQL',
       link: 'https://deluxe-daifuku-08e26e.netlify.app/',
       github: 'https://deluxe-daifuku-08e26e.netlify.app/',
@@ -89,16 +100,7 @@ const Portfolio = () => {
       link: 'https://github.com/orgs/Black-Ops-Geekss/repositories',
       github: 'https://github.com/orgs/Black-Ops-Geekss/repositories',
     },
-    {
-      id: 9,
-      title: 'JOurney',
-      img: IMG9,
-      description:
-        'we have built a website for schools that provides Organizing fun, useful and safe school trips takes a lot of time and effort and requires special study for the trip ',
-      technologies: 'React | Redux | CSS | Node.js | Express.js | PostgreSQL',
-      link: 'https://github.com/orgs/School-trip-app/repositories',
-      github: 'https://github.com/orgs/School-trip-app/repositories',
-    },
+ 
     {
       id: 10,
       title: 'Typing Speed',
