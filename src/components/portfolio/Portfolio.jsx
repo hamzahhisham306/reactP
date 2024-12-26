@@ -11,6 +11,7 @@ import IMG10 from '../../assets/app10.png';
 import IMG11 from '../../assets/Screenshot 2023-12-23 141300.png'
 import IMG12 from '../../assets/Screenshot 2023-12-23 141711.png'
 import IMG13 from '../../assets/Screenshot 2023-12-23 142957.png'
+import IMG14 from '../../assets/Screenshot 2024-12-26 121113.png'
 import Learn from '../../assets/learn.png'
 import Ecommerce from '../../assets/ecommer.png';
 import './portfolio.css';
@@ -48,7 +49,16 @@ const Portfolio = () => {
       link: 'https://allarabusa.com/en',
       github: 'https://allarabusa.com/en',
     },
- 
+     {
+      id: 9324,
+      title: 'Movie search',
+      img: IMG14,
+      description:
+        'web application that allows users to discover movie and TV show trailers. It is built with Angular and utilizes data from the TMDB (The Movie Database) API.',
+      technologies: 'Angular | HTML | CSS | RxJS | Service',
+      link: ' https://movieangulr.netlify.app/ ',
+      github: 'https://github.com/hamzahhisham306/Angular_movie',
+    },
     {
       id: 9432,
       title: 'E-commerce',
