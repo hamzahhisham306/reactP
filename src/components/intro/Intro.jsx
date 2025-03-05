@@ -3,7 +3,7 @@ import { FaAward } from 'react-icons/fa';
 import { VscFolderLibrary } from 'react-icons/vsc';
 import ME from '../../assets/hamza.jfif';
 import './intro.css';
-
+import Scroll from '../Scroll/Scroll'
 const Intro = () => {
   return (
     <section id="about">
@@ -28,34 +28,78 @@ const Intro = () => {
               <small>20+ Completed Projects</small>
             </article>
           </div>
-          <p>Full Stack Web Developer with a Background in Cyber Security. Passionate about using my
-            knowledge to maximize efficiency while developing creative, customer focused solutions.
-            Fluent in Arabic and have a professional level in English.</p>
+          <Scroll baseOpacity={0}
+            enableBlur={true}
+            baseRotation={5}
+            blurStrength={10} >
+            <p>Full Stack Web Developer with a Background in Cyber Security. Passionate about using my
+              knowledge to maximize efficiency while developing creative, customer focused solutions.
+              Fluent in Arabic and have a professional level in English.</p>
+          </Scroll>
           <a href="#contact" className="btn btn-primary">Let's Talk</a>
           <div style={{ marginTop: "40px" }}>
             <h2>Experience</h2>
             <ul>
               <li style={{ marginTop: "14px" }}>
+                <Scroll
+                  baseOpacity={0}
+                  enableBlur={true}
+                  baseRotation={5}
+                  blurStrength={10} >
 
-                1. As a Full Stack Developer at thelearnbook.com, I resolved bugs and added features to
-                enhance functionality. I improved user experience by implementing new features and
-                addressing performance issues. My contributions as a problem solver and collaborator
-                improved the website's usability.
+                  1. As a Full Stack Developer at thelearnbook.com, I resolved bugs and added features to
+                  enhance functionality. I improved user experience by implementing new features and
+                  addressing performance issues. My contributions as a problem solver and collaborator
+                  improved the website's usability.
+                </Scroll>
               </li>
             </ul>
             <li style={{ marginTop: "14px" }}>
-              2. Frontend Developer at glyphsmarketing creating a user interface website or application it
-              Involves designing and implementing the visual elements , layouts and features that users
-              see and interact with
+              <Scroll
+                baseOpacity={0}
+                enableBlur={true}
+                baseRotation={5}
+                blurStrength={10} >
+                2. Frontend Developer at glyphsmarketing creating a user interface website or application it
+                Involves designing and implementing the visual elements , layouts and features that users
+                see and interact with
+              </Scroll>
+
             </li>
             <li style={{ marginTop: "14px" }}>
-              3. AI Prompt Engineer at MenaDevs:
+              <Scroll
+                baseOpacity={0}
+                enableBlur={true}
+                baseRotation={5}
+                blurStrength={10} >
+                3. AI Prompt Engineer at MenaDevs:
+              </Scroll>
+
               <ul>
-                <li>    • As an AI Prompt Engineer at Menadevs, I design, develop, and test complex prompts that optimize AI models.
+                <li>    <Scroll
+                  baseOpacity={0}
+                  enableBlur={true}
+                  baseRotation={5}
+                  blurStrength={10} >  • As an AI Prompt Engineer at Menadevs, I design, develop, and test complex prompts that optimize AI models.</Scroll>
                 </li>
-                <li> •  My role extends beyond prompt creation to include coding for AI-driven tasks and refining AI-generated code.  </li>
-                <li>• Successfully refactored AI-generated code to improve its performance and readability leading to higher-quality. </li>
-                <li>   • Contributed to the continuous improvement of AI models by providing insights and feedback that led to optimization
+                <li>  <Scroll
+                  baseOpacity={0}
+                  enableBlur={true}
+                  baseRotation={5}
+                  blurStrength={10} > •  My role extends beyond prompt creation to include coding for AI-driven tasks and refining AI-generated code.               </Scroll>
+                </li>
+                <li> <Scroll
+                  baseOpacity={0}
+                  enableBlur={true}
+                  baseRotation={5}
+                  blurStrength={10} > • Successfully refactored AI-generated code to improve its performance and readability leading to higher-quality.               </Scroll>
+                </li>
+                <li>  <Scroll
+                  baseOpacity={0}
+                  enableBlur={true}
+                  baseRotation={5}
+                  blurStrength={10} >   • Contributed to the continuous improvement of AI models by providing insights and feedback that led to optimization              </Scroll>
+
                 </li>
               </ul>
 

@@ -6,11 +6,12 @@ import IMG4 from '../../assets/app4.png';
 import IMG5 from '../../assets/app6.png';
 import IMG6 from '../../assets/app7.png';
 import IMG7 from '../../assets/app8.png';
-import IMG9 from '../../assets/app9.png';
+import IMG9 from '../../assets/Screenshot 2024-12-26 122810.png';
 import IMG10 from '../../assets/app10.png';
 import IMG11 from '../../assets/Screenshot 2023-12-23 141300.png'
 import IMG12 from '../../assets/Screenshot 2023-12-23 141711.png'
 import IMG13 from '../../assets/Screenshot 2023-12-23 142957.png'
+import IMG14 from '../../assets/Screenshot 2024-12-26 121113.png'
 import Learn from '../../assets/learn.png'
 import Ecommerce from '../../assets/ecommer.png';
 import './portfolio.css';
@@ -59,16 +60,26 @@ const Portfolio = () => {
       link: 'https://allarabusa.com/en',
       github: 'https://allarabusa.com/en',
     },
-    // {
-    //   id: 9324,
-    //   title: 'chat application',
-    //   img: Ecommerce,
-    //   description:
-    //     'Chat application to communtion between people',
-    //   technologies: 'React | Redux | CSS | JSX | NodeJS| Express | MongoDB| Web-Socket',
-    //   link: 'https://gleeful-axolotl-730d5d.netlify.app/',
-    //   github: 'https://allarabusa.com/en',
-    // },
+    {
+      id: 9324,
+      title: 'Movie search',
+      img: IMG14,
+      description:
+        'web application that allows users to discover movie and TV show trailers. It is built with Angular and utilizes data from the TMDB (The Movie Database) API.',
+      technologies: 'Angular | HTML | CSS | RxJS | Service',
+      link: ' https://movieangulr.netlify.app/ ',
+      github: 'https://github.com/hamzahhisham306/Angular_movie',
+    },
+    {
+      id: 9,
+      title: 'JOurney',
+      img: IMG9,
+      description:
+        'we have built a website for schools that provides Organizing fun, useful and safe school trips takes a lot of time and effort and requires special study for the trip ',
+      technologies: 'React | Redux | CSS | Node.js | Express.js | PostgreSQL',
+      link: 'https://dulcet-tiramisu-3c7b3d.netlify.app/',
+      github: 'https://github.com/orgs/School-trip-app/repositories',
+    },
     {
       id: 9,
       title: 'Georgia Muslim',
@@ -89,16 +100,7 @@ const Portfolio = () => {
       link: 'https://github.com/orgs/Black-Ops-Geekss/repositories',
       github: 'https://github.com/orgs/Black-Ops-Geekss/repositories',
     },
-    {
-      id: 9,
-      title: 'JOurney',
-      img: IMG9,
-      description:
-        'we have built a website for schools that provides Organizing fun, useful and safe school trips takes a lot of time and effort and requires special study for the trip ',
-      technologies: 'React | Redux | CSS | Node.js | Express.js | PostgreSQL',
-      link: 'https://github.com/orgs/School-trip-app/repositories',
-      github: 'https://github.com/orgs/School-trip-app/repositories',
-    },
+ 
     {
       id: 10,
       title: 'Typing Speed',
