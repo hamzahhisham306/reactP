@@ -37,7 +37,7 @@ const App = () => {
     },
     {
       image: Ecommerce,
-      link: 'https://google.com/',
+      link: 'https://illustrious-sopapillas-c96ed0.netlify.app/',
       title: 'E-commerce',
       description: 'Ecommerce is the buying/selling of goods or services on the Internet'
     },
