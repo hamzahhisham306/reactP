@@ -67,7 +67,7 @@ const Portfolio = () => {
       description:
         'web application that allows users to discover movie and TV show trailers. It is built with Angular and utilizes data from the TMDB (The Movie Database) API.',
       technologies: 'Angular | HTML | CSS | RxJS | Service',
-      link: ' https://movieangulr.netlify.app/ ',
+      link: ' https://movieangulr.netlify.app ',
       github: 'https://github.com/hamzahhisham306/Angular_movie',
     },
     {
@@ -77,7 +77,7 @@ const Portfolio = () => {
       description:
         'we have built a website for schools that provides Organizing fun, useful and safe school trips takes a lot of time and effort and requires special study for the trip ',
       technologies: 'React | Redux | CSS | Node.js | Express.js | PostgreSQL',
-      link: 'https://dulcet-tiramisu-3c7b3d.netlify.app/',
+      link: 'https://dulcet-tiramisu-3c7b3d.netlify.app',
       github: 'https://github.com/orgs/School-trip-app/repositories',
     },
     {
