@@ -67,9 +67,9 @@
   .face-description {
     user-select: none;
     position: absolute;
-    max-width: 10ch;
+    max-width: 31ch;
     top: 50%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     right: 1%;
     transform: translate(0, -50%);
   }
