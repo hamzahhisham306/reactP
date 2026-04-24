@@ -1,8 +1,34 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, Component } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+
+const isWebGLAvailable = () => {
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+    );
+  } catch {
+    return false;
+  }
+};
+
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) return this.props.fallback || null;
+    return this.props.children;
+  }
+}
 
 const Computers = ({ isMobile, isSmallMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
@@ -21,7 +47,7 @@ const Computers = ({ isMobile, isSmallMobile }) => {
         angle={0.12}
         penumbra={1}
         intensity={1}
-        castShadow
+        castShadow={!isMobile}
         shadow-mapSize={1024}
       />
       <pointLight intensity={1} />
@@ -38,8 +64,11 @@ const Computers = ({ isMobile, isSmallMobile }) => {
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isSmallMobile, setIsSmallMobile] = useState(false);
+  const [webGLAvailable, setWebGLAvailable] = useState(true);
 
   useEffect(() => {
+    setWebGLAvailable(isWebGLAvailable());
+
     const mobileQuery = window.matchMedia("(max-width: 500px)");
     const smallQuery = window.matchMedia("(max-width: 390px)");
 
@@ -58,25 +87,36 @@ const ComputersCanvas = () => {
     };
   }, []);
 
-  return (
-    <Canvas
-      frameloop='demand'
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} isSmallMobile={isSmallMobile} />
-      </Suspense>
+  if (!webGLAvailable) return null;
 
-      <Preload all />
-    </Canvas>
+  const mobile = isMobile || isSmallMobile;
+
+  return (
+    <ErrorBoundary fallback={null}>
+      <Canvas
+        frameloop='demand'
+        shadows={!mobile}
+        dpr={mobile ? 1 : [1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{
+          preserveDrawingBuffer: true,
+          powerPreference: mobile ? "low-power" : "high-performance",
+          antialias: !mobile,
+          failIfMajorPerformanceCaveat: false,
+        }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers isMobile={isMobile} isSmallMobile={isSmallMobile} />
+        </Suspense>
+
+        <Preload all />
+      </Canvas>
+    </ErrorBoundary>
   );
 };
 
