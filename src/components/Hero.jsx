@@ -87,8 +87,8 @@ const Hero = () => {
 
           {/* Download CV button */}
           <motion.a
-            href='/HamzahCVR.docx'
-            download='Hamzah_Aqrabawi_CV.docx'
+            href='/Hamzah_Aqrabawi.pdf'
+            download='Hamzah_Aqrabawi.pdf'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
