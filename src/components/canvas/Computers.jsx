@@ -4,8 +4,14 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
+const Computers = ({ isMobile, isSmallMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
+
+  const position = isSmallMobile
+    ? [0, -5, -1.3]
+    : isMobile
+    ? [0, -1.5, -1.3]
+    : [0, -3.25, -1.5];
 
   return (
     <mesh>
@@ -22,7 +28,7 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.5 : 0.75}
-        position={isMobile ? [0, -1.5, -1.3] : [0, -3.25, -1.5]}
+        position={position}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -31,25 +37,24 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    const smallQuery = window.matchMedia("(max-width: 390px)");
 
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
+    setIsMobile(mobileQuery.matches);
+    setIsSmallMobile(smallQuery.matches);
 
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
+    const handleMobile = (e) => setIsMobile(e.matches);
+    const handleSmall = (e) => setIsSmallMobile(e.matches);
 
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    mobileQuery.addEventListener("change", handleMobile);
+    smallQuery.addEventListener("change", handleSmall);
 
-    // Remove the listener when the component is unmounted
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      mobileQuery.removeEventListener("change", handleMobile);
+      smallQuery.removeEventListener("change", handleSmall);
     };
   }, []);
 
@@ -67,7 +72,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
+        <Computers isMobile={isMobile} isSmallMobile={isSmallMobile} />
       </Suspense>
 
       <Preload all />
