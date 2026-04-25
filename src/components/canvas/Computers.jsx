@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, Component } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -29,57 +29,66 @@ const Computers = ({ isMobile }) => {
   );
 };
 
+class CanvasErrorBoundary extends Component {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  render() {
+    if (this.state.failed) return null;
+    return this.props.children;
+  }
+}
+
 const ComputersCanvas = () => {
-  const [ready, setReady] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  const [webGLOK, setWebGLOK] = useState(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 768px)");
-    const mobile = mq.matches;
-    setIsMobile(mobile);
+    setIsMobile(mq.matches);
 
-    if (!mobile) {
-      // Only initialize WebGL on desktop
-      try {
-        const testCanvas = document.createElement("canvas");
-        const gl =
-          testCanvas.getContext("webgl") ||
-          testCanvas.getContext("experimental-webgl");
-        if (gl) setReady(true);
-      } catch {
-        // WebGL not available — keep ready=false
-      }
+    try {
+      const probe = document.createElement("canvas");
+      const ctx =
+        probe.getContext("webgl") || probe.getContext("experimental-webgl");
+      setWebGLOK(!!ctx);
+    } catch {
+      setWebGLOK(false);
     }
 
-    const handler = (e) => {
-      setIsMobile(e.matches);
-      if (e.matches) setReady(false);
-    };
+    const handler = (e) => setIsMobile(e.matches);
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  if (!ready || isMobile) return null;
+  // Wait for the WebGL probe; skip entirely if unsupported
+  if (webGLOK === null || !webGLOK) return null;
 
   return (
-    <Canvas
-      frameloop='demand'
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={false} />
-      </Suspense>
+    <CanvasErrorBoundary>
+      <Canvas
+        frameloop='demand'
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true, alpha: true }}
+        style={{ background: "transparent" }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers isMobile={isMobile} />
+        </Suspense>
 
-      <Preload all />
-    </Canvas>
+        <Preload all />
+      </Canvas>
+    </CanvasErrorBoundary>
   );
 };
 
