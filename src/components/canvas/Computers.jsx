@@ -29,35 +29,37 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const webGLAvailable = (() => {
-  try {
-    const canvas = document.createElement("canvas");
-    return !!(
-      window.WebGLRenderingContext &&
-      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
-    );
-  } catch {
-    return false;
-  }
-})();
-
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [show, setShow] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 768px)");
-    setIsMobile(mobileQuery.matches);
-    const handleMobile = (e) => setIsMobile(e.matches);
-    mobileQuery.addEventListener("change", handleMobile);
+    const mq = window.matchMedia("(max-width: 768px)");
+    const mobile = mq.matches;
+    setIsMobile(mobile);
 
-    // Only show the canvas if WebGL is available
-    setShow(webGLAvailable);
+    if (!mobile) {
+      // Only initialize WebGL on desktop
+      try {
+        const testCanvas = document.createElement("canvas");
+        const gl =
+          testCanvas.getContext("webgl") ||
+          testCanvas.getContext("experimental-webgl");
+        if (gl) setReady(true);
+      } catch {
+        // WebGL not available — keep ready=false
+      }
+    }
 
-    return () => mobileQuery.removeEventListener("change", handleMobile);
+    const handler = (e) => {
+      setIsMobile(e.matches);
+      if (e.matches) setReady(false);
+    };
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
   }, []);
 
-  if (!show) return null;
+  if (!ready || isMobile) return null;
 
   return (
     <Canvas
@@ -66,13 +68,6 @@ const ComputersCanvas = () => {
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
-      onCreated={({ gl }) => {
-        // Hide canvas if context is lost/unavailable
-        gl.domElement.addEventListener("webglcontextlost", (e) => {
-          e.preventDefault();
-          setShow(false);
-        });
-      }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -80,7 +75,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
+        <Computers isMobile={false} />
       </Suspense>
 
       <Preload all />
