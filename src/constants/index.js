@@ -20,6 +20,9 @@ import {
   delive,
   thelearnbook,
   arabgeorgia,
+  dental,
+  restaurant,
+  eventhub,
 } from "../assets";
 
 export const navLinks = [
@@ -250,6 +253,70 @@ const projects = [
     ],
     image: arabgeorgia,
     source_code_link: "https://arab-georgia.com/",
+  },
+  {
+    name: "Dental 3D Treatment Planner",
+    description:
+      "A responsive web application for interactive visualization and treatment planning of 3D dental models, letting dentists inspect upper and lower jaw models from predefined views (Front, Top, Bottom, Left, Right, Upper/Lower) to improve diagnosis. Built entirely with AI.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "three.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "ai-built",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: dental,
+    source_code_link:
+      "https://3-dos.com/dental-viewer/?caseId=1&token=GAASw3l7iPIO323OHoMnXhXYoBLTG8RQmz1lm8OtEFsD1VRE",
+  },
+  {
+    name: "Restaurant Management System",
+    description:
+      "A full-stack restaurant management platform with a customer website, an admin dashboard, and RESTful APIs — featuring menu management, reservations, multilingual support, authentication, and responsive user interfaces.",
+    tags: [
+      {
+        name: "next.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "node.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "sql",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: restaurant,
+    source_code_link: "https://dewanresturant.com/en",
+  },
+  {
+    name: "EventHub",
+    description:
+      "An event booking platform that lets users discover upcoming events and create new ones through a clean, responsive interface.",
+    tags: [
+      {
+        name: "next.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: eventhub,
+    source_code_link: "https://event-nextjs-last.vercel.app/",
   },
 ];
 

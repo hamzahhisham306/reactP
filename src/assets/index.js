@@ -33,6 +33,9 @@ import thelearnbook from "./ThelearnbookGate.png";
 import arabgeorgia from "./Arabgeorgia.png";
 import sawa   from "./SwawProject.png";
 import delive from "./DeliveProject.png";
+import dental from "./Dental_3D.png";
+import restaurant from "./Restaurant_Management.png";
+import eventhub from "./EventHub.png";
 export {
   logo,
   backend,
@@ -66,4 +69,7 @@ export {
   arabgeorgia,
   sawa,
   delive,
+  dental,
+  restaurant,
+  eventhub,
 };
