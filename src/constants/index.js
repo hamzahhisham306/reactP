@@ -23,6 +23,7 @@ import {
   dental,
   restaurant,
   eventhub,
+  Voice
 } from "../assets";
 
 export const navLinks = [
@@ -318,6 +319,27 @@ const projects = [
     image: eventhub,
     source_code_link: "https://event-nextjs-last.vercel.app/",
   },
+  {
+    name:"Converso",
+    description:"Converso is a real-time AI voice-tutoring SaaS built with Next.js 15 (App Router) where users create custom AI companions — tutors with a chosen subject, topic, voice, and teaching style — and hold live spoken lessons with them. Authentication and subscription billing are handled by Clerk, while Supabase (PostgreSQL) stores companions, session history, and bookmarks, secured with Row-Level Security keyed to the Clerk user ID. The live voice conversations are powered by Vapi, which orchestrates Deepgram (speech-to-text), OpenAI GPT-4 (the tutor's brain), and ElevenLabs (text-to-speech) entirely in the browser. Data access runs through Next.js Server Actions, the UI is built with React 19, Tailwind CSS v4, and shadcn/ui components, forms use react-hook-form with Zod validation, and Sentry provides error monitoring. The three services never talk directly — the app is the hub: Clerk issues a JWT that unlocks Supabase, and Vapi reports completed sessions back to the database via a server action.",
+    tags:[
+      {
+        name:"next.js",
+        color:"blue-text-gradient"
+      },
+      {
+        name:"supabase",
+        color:"green-text-gradient"
+      },
+      {
+        name:"ai",
+        color:"pink-text-gradient"
+      }
+    ],
+    image:Voice,
+    source_code_link:"https://voice-learning-git-main-hamzahhisham306s-projects.vercel.app/"
+
+  }
 ];
 
 export { services, technologies, experiences, testimonials, projects };
