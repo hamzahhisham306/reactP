@@ -15,22 +15,34 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  mobile,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className='mb-7 break-inside-avoid'
+    >
       <Tilt
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        className='bg-tertiary p-5 rounded-2xl w-full'
       >
-        <div className='relative w-full h-[230px]'>
+        <div
+          className={`relative w-full ${
+            mobile
+              ? "h-[520px] bg-black-100 flex items-center justify-center"
+              : "h-[230px]"
+          }`}
+        >
           <img
             src={image}
             alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            className={`w-full h-full rounded-2xl ${
+              mobile ? "object-contain" : "object-cover"
+            }`}
           />
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
@@ -49,7 +61,16 @@ const ProjectCard = ({
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+          <p
+            className='mt-2 text-secondary text-[14px] overflow-hidden'
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 5,
+              WebkitBoxOrient: "vertical",
+            }}
+          >
+            {description}
+          </p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
@@ -88,7 +109,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-20 columns-1 sm:columns-2 lg:columns-3 gap-7'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

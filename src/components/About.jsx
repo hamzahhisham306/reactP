@@ -47,11 +47,17 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Full Stack Developer with 3+ years of hands-on experience building
+        scalable, high-performance React.js web applications and
+        cross-platform mobile apps with React Native. Skilled in React
+        Hooks, component design patterns, state management with Redux
+        Toolkit, and client-side routing with React Router and React
+        Navigation. Experienced integrating RESTful APIs with Axios,
+        building validated forms with React Hook Form, Yup, and Zod, and
+        using Vite and Expo for modern, optimized build tooling. Proven
+        track record delivering production-ready web and mobile platforms
+        across e-commerce, logistics, and academic domains, from prototype
+        through deployment.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

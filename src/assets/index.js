@@ -37,6 +37,8 @@ import dental from "./Dental_3D.png";
 import restaurant from "./Restaurant_Management.png";
 import eventhub from "./EventHub.png";
 import Voice from './VoiceProject.png'
+import sawaMobile from "./SawaMobile.png";
+import expenseTracker from "./ExpenseTrracker.png";
 export {
   logo,
   backend,
@@ -73,5 +75,7 @@ export {
   dental,
   restaurant,
   eventhub,
-  Voice
+  Voice,
+  sawaMobile,
+  expenseTracker
 };

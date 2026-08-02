@@ -23,7 +23,9 @@ import {
   dental,
   restaurant,
   eventhub,
-  Voice
+  Voice,
+  sawaMobile,
+  expenseTracker
 } from "../assets";
 
 export const navLinks = [
@@ -123,10 +125,11 @@ const experiences = [
     iconBg: "#383E56",
     date: "November 2025 - Present",
     points: [
-      "Building and maintaining full-stack web applications using modern JavaScript frameworks.",
-      "Developing scalable backend services and RESTful APIs to power client-facing platforms.",
-      "Collaborating with cross-functional teams to deliver high-quality products on time.",
-      "Key projects include Sawa (sawa.xapis.com) and Dliv (dliv.me).",
+      "Build and maintain full-stack web and mobile applications using React.js, React Native, React Hooks, and modern JavaScript frameworks.",
+      "Developed the SAWA web application (sawa.xapis.com) using React.js and Redux Toolkit for state management.",
+      "Developed a separate SAWA mobile application for iOS and Android using React Native, Expo, and React Navigation, sharing business logic with the web platform.",
+      "Develop scalable backend services and RESTful APIs powering client platforms, including SAWA and Dliv (dliv.me).",
+      "Integrate web and mobile applications with backend APIs using Axios, and implement validated forms with React Hook Form, Yup, and Zod.",
     ],
   },
   {
@@ -321,7 +324,7 @@ const projects = [
   },
   {
     name:"Converso",
-    description:"Converso is a real-time AI voice-tutoring SaaS built with Next.js 15 (App Router) where users create custom AI companions — tutors with a chosen subject, topic, voice, and teaching style — and hold live spoken lessons with them. Authentication and subscription billing are handled by Clerk, while Supabase (PostgreSQL) stores companions, session history, and bookmarks, secured with Row-Level Security keyed to the Clerk user ID. The live voice conversations are powered by Vapi, which orchestrates Deepgram (speech-to-text), OpenAI GPT-4 (the tutor's brain), and ElevenLabs (text-to-speech) entirely in the browser. Data access runs through Next.js Server Actions, the UI is built with React 19, Tailwind CSS v4, and shadcn/ui components, forms use react-hook-form with Zod validation, and Sentry provides error monitoring. The three services never talk directly — the app is the hub: Clerk issues a JWT that unlocks Supabase, and Vapi reports completed sessions back to the database via a server action.",
+    description:"A real-time AI voice-tutoring SaaS built with Next.js 15, where users create custom AI companions and hold live spoken lessons powered by Vapi, Deepgram, GPT-4, and ElevenLabs. Clerk handles auth and billing, while Supabase stores session data behind Row-Level Security.",
     tags:[
       {
         name:"next.js",
@@ -339,7 +342,51 @@ const projects = [
     image:Voice,
     source_code_link:"https://voice-learning-git-main-hamzahhisham306s-projects.vercel.app/"
 
-  }
+  },
+  {
+    name: "Sawa Mobile",
+    description:
+      "A React Native mobile version of the SAWA platform, bringing the SAWA web application's core experience to iOS and Android with native navigation and shared business logic.",
+    tags: [
+      {
+        name: "react-native",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "expo",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mobile",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: sawaMobile,
+    source_code_link: "https://sawa.xapis.com/",
+    mobile: true,
+  },
+  {
+    name: "Expense Tracker",
+    description:
+      "A cross-platform mobile app for tracking recurring subscriptions, built with Expo and TypeScript. Features custom authentication, spending insights, and a fully interactive subscription management flow.",
+    tags: [
+      {
+        name: "expo",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "react-native",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: expenseTracker,
+    source_code_link: "#",
+    mobile: true,
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects };
